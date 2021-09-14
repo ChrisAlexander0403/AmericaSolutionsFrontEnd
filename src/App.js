@@ -49,7 +49,7 @@ function App() {
           <Route path="/contact" exact component={Contact} />
         </Switch>
       </ScrollToTop>
-      <Footer />
+      <Footer       />
     </Router>
   );
 }

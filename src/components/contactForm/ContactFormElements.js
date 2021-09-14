@@ -1,0 +1,212 @@
+import styled, { keyframes } from 'styled-components';
+import { FiMail, FiPhone } from 'react-icons/fi';
+import { GoLocation } from 'react-icons/go';
+import { AiOutlineGlobal } from 'react-icons/ai';
+
+const lightning = keyframes`
+    0%,100%{
+        color: #ffef00;
+        filter: blur(1px);
+        text-shadow: 0 0 10px #ffef00,
+                    0 0 20px #ffef00,
+                    0 0 40px #ffef00,
+                    0 0 80px #ffef00,
+                    0 0 120px #ffef00
+    }
+    20%,80%{
+        color: #222;
+        filter: blur(0px);
+        text-shadow: none;
+    }
+`;
+
+export const Image = styled.img`
+    width: 200px;
+`;
+
+export const Success = styled.p`
+    margin: 20px;
+`;
+export const DivSuccess = styled.div`
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const FormContainer = styled.div`
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    margin: 50px 0;
+
+    @media screen and (max-width: 768px){
+        width: 100%;
+        box-shadow: none;
+        grid-template-columns: 100%;
+    }
+`;
+export const DivForm = styled.div`
+    padding: 2em;
+
+    @media screen and (max-width: 768px){
+        grid-column: 1/-1;
+        width: 100%;
+        padding: 2em 1em;
+        border: none;
+    }
+`;
+export const ContactForm = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 20px;
+    @media screen and (max-width: 768px){
+        grid-column: 1/-1;
+        width: 100%;
+        grid-template-columns: 100%;
+    }
+`;
+export const InfoForm = styled.div`
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #151b4e;
+    padding: 0 2em;
+    min-height: 350px;
+    color: #fff;
+    @media screen and (max-width: 768px){
+        grid-column: 1/-1;
+        padding: 2em 1em;
+        min-height: 300px;
+    }
+`;
+
+export const Logo = styled.img`
+    width: 250px;
+    align-self: center;
+    transform: translateY(80px);
+`;
+
+export const SubtitleLightning = styled.h3`
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+    animation: ${lightning} 5s linear infinite;
+    user-select: none;
+    @media screen and (max-width: 768px){
+        margin-top: 30px;
+        animation: none;
+        color: #ffef00;
+        text-shadow: 0 0 40px #ffef00;
+    }
+`;
+export const Subtitle = styled.h2`
+    margin: 5px 0 20px;
+    color: #151b4e;
+`;
+export const Text = styled.p`
+    margin-top: 20px; 
+    @media screen and (max-width: 768px){
+        grid-column: 1/-1;
+    }
+`;
+export const Error = styled.p`
+    padding-top: 5px;
+    font-size: 12px;
+    color: red;
+`;
+export const AreaText = styled.p`
+    margin-top: 20px;
+    grid-column: span 2;
+`;
+export const TextInfo = styled.div`
+    font-size: 14px;
+    display: flex;
+    margin: 5px 25px 10px;
+`;
+export const Label = styled.label`
+    
+`;
+export const TextArea = styled.textarea`
+    width: 90%;
+    padding: .7em;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #151b4e;
+    color: #000;
+    outline: 0;
+    resize: none;
+`;
+export const Mail = styled(FiMail)`
+    margin-right: 7px;
+    min-width: 16px;
+    min-height: 16px;
+`;
+export const Phone = styled(FiPhone)`
+    margin-right: 7px;
+    min-width: 16px;
+    min-height: 16px;
+`;
+export const Location = styled(GoLocation)`
+    margin-right: 7px;
+    min-width: 16px;
+    min-height: 16px;
+`;
+export const Global = styled(AiOutlineGlobal)`
+    margin-right: 7px;
+    min-width: 16px;
+    min-height: 16px;
+`;
+export const Input = styled.input.attrs(props => ({
+    type: props.type
+}))`
+    width: 90%;
+    padding: .7em;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #151b4e;
+    color: #000;
+    outline: 0;
+    -moz-appearance:textfield;
+    &::placeholder{
+        content: ${props => props.placeholder};
+    }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus, 
+    &:-webkit-autofill:active{
+        box-shadow: 0 0 0 30px #181818 inset !important;
+    }
+    &:-webkit-autofill {
+        -webkit-text-fill-color: #fff !important;
+        caret-color: white;
+    }
+    //https://qastack.mx/programming/2781549/removing-input-background-colour-for-chrome-autocomplete
+`;
+export const SendInput = styled.button`
+    width: 90%;
+    border: none;
+    margin-top: 20px;
+    background: #151b4e;
+    color: #fff;
+    outline: 0;
+    text-transform: uppercase;
+    padding: 1em;
+    grid-column: span 2;
+    &:hover{
+        background: #0082cc;
+        color: #fff;
+        transition: background .3 ease-in-out;
+    }
+    &:active{
+        transform: translateY(5px);
+    }
+`;

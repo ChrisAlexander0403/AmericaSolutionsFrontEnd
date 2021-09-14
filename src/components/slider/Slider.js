@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Buy, Controllers, Div, DivDistributor, DivText, Free, Image, LeftArrow, Main, RightArrow, Slide, SlideShow, Text, TextDescription, TextInfo, TextLink, TextPackages } from './SliderElements';
 
-import blue from '../../assets/img/slider/blue.png';
+import Meeting from '../../assets/img/slider/Meeting.jpg';
+import TeamWork from '../../assets/img/slider/TeamWork.jpg';
+import Consulting from '../../assets/img/slider/Consulting.jpg';
 
 const Slider = (props) => {
     const slideShow = useRef(null);
@@ -159,7 +161,7 @@ const Slider = (props) => {
                             Forma parte de nuestro equipo de distribuidores y comienza a generar ingresos como aliado Facturándote.
                         </TextDescription>
                     </DivDistributor>
-                    <Image src={blue} alt={""}/>
+                    <Image src={Consulting} alt={""}/>
                     <DivText background={"rgba(0, 0, 0, .5)"}>
                         <TextLink to={'/DistributorAccess'} color={"#ffef00"}>Haz click aquí y conviértete en distribuidor</TextLink>
                     </DivText>
@@ -167,7 +169,7 @@ const Slider = (props) => {
                 <Slide className={'slide'}>
                     <TextPackages>Prueba nuestros paquetes más económicos.</TextPackages>
                     <Buy to={`/Services`} />
-                    <Image src={blue} alt={""}/>
+                    <Image src={Meeting} alt={""}/>
                     {/* <DivText>
                         <Text>15% de descuento en productos apple</Text>
                     </DivText> */}
@@ -179,7 +181,7 @@ const Slider = (props) => {
                         </TextInfo>
                     </Div>
                     <Free to={`/Contact/Free`} />
-                    <Image src={blue} alt={""}/>
+                    <Image src={TeamWork} alt={""}/>
                     <DivText>
                         <Text color={'#ffef00'} fontSize={'12px'}>Promoción válida sólo para nuevos usuarios.</Text>
                     </DivText>

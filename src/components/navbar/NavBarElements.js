@@ -11,7 +11,7 @@ export const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     z-index: 3;
-    position: fixed;
+    position: relative;
     @media screen and (orientation: landscape) and (max-width: 1080px){
         position: relative;
     }
@@ -34,7 +34,7 @@ export const NavLinkLogo = styled(Link)`
 `;
 
 export const Image = styled.img`
-    height: 25px;
+    height: 125px;
 `;
 
 export const NavLink = styled(Link)`

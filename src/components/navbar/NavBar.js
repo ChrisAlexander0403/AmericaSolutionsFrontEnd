@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+
 import { Nav, NavLinkLogo, NavLink, Bars, Close, NavMenu, Image } from './NavBarElements';
+import LogoBlanco from '../../assets/img/logos/AmericaSolutions/LogoBlanco.png';
 
 export default function NavBar() {
     const [click, setClick] = useState(false);
@@ -9,7 +11,7 @@ export default function NavBar() {
         <>
             <Nav>
                 <NavLinkLogo to="/" onClick={closeMobileMenu}>
-                    <Image src={'#'} />
+                    <Image src={LogoBlanco} />
                 </NavLinkLogo>
                 <div onClick={handleClick}>
                     {click ? <Close /> : <Bars />}

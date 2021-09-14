@@ -15,8 +15,11 @@ export const MainContainer = styled.div`
 `;
 
 export const EnterpriseContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 200px;
-    height: 100px;
+    height: 80px;
     background: ${props => props.background || '#ffef00'};
     border-radius: 15px;
     @media screen and (max-width: 768px){
@@ -28,4 +31,8 @@ export const EnterpriseContainer = styled.div`
             margin: 10px 0 20px;
         }
     }
+`;
+
+export const EnterpriseLogo = styled.img`
+    width: 150px;
 `;

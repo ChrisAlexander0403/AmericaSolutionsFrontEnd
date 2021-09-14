@@ -3,7 +3,7 @@ import React from 'react';
 import {Facebook, Twitter, Link, SocialMedia} from './FooterElements';
 import { Contact, Container, FooterInformation, Description, FooterEnd, Text, Title, Image, Mail, Phone, Location } from './FooterElements';
 
-import LogoBlanco from '../../assets/img/logos/LogoBlanco.png';
+import LogoBlanco from '../../assets/img/logos/AmericaSolutions/LogoBlanco.png';
 
 export default function Footer(){
     const facebook = () => {
