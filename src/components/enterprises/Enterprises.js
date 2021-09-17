@@ -2,6 +2,7 @@ import React from 'react';
 
 import { EnterpriseContainer, EnterpriseLogo, MainContainer } from './EnterprisesElements';
 
+import Intecel from '../../assets/img/logos/Intecel/Intecel.png';
 import HughesNet from '../../assets/img/logos/HughesNet/logo.svg';
 import Facturandote from '../../assets/img/logos/Facturandote/FacturandoteLogo.png';
 import MSP from '../../assets/img/logos/MSP/LogoMSP.png';
@@ -10,7 +11,7 @@ const Enterprises = () => {
     return (
         <MainContainer>
             <EnterpriseContainer>
-
+                <EnterpriseLogo src={Intecel}/>
             </EnterpriseContainer>
             <EnterpriseContainer background={'#f05a28'}>
                 <EnterpriseLogo src={HughesNet}/>

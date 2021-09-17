@@ -1,26 +1,26 @@
 import React from 'react';
 
-import {Facebook, Twitter, Link, SocialMedia} from './FooterElements';
+import {Facebook, Link, SocialMedia, Instagram} from './FooterElements';
 import { Contact, Container, FooterInformation, Description, FooterEnd, Text, Title, Image, Mail, Phone, Location } from './FooterElements';
 
 import LogoBlanco from '../../assets/img/logos/AmericaSolutions/LogoBlanco.png';
 
 export default function Footer(){
     const facebook = () => {
-        window.open("https://www.facebook.com/Facturandote.mx", '_blank');
+        window.open("https://www.facebook.com/SolucionesAmerica.Net", '_blank');
     }
-    const twitter = () => {
-        window.open("https://twitter.com/Facturandote_", '_blank');
+    const instagram = () => {
+        window.open("https://www.instagram.com/solucionesamerica/?hl=es", '_blank');
     }
     return(
         <Container>
             <FooterInformation>
                 <Description>
                     <Image src={LogoBlanco}/>
-                    <Text>Buen servicio con los mejores precios y gran cobertura en todo el territorio nacional.</Text>
+                    <Text>Nacimos para solucionarte la vida.</Text>
                     <SocialMedia>
                         <Facebook onClick={facebook}></Facebook>
-                        <Twitter onClick={twitter}></Twitter>
+                        <Instagram onClick={instagram}></Instagram>
                         {/* <div 
                             style={{color: '#fff', 
                                 margin: '5px 20px',
@@ -42,7 +42,7 @@ export default function Footer(){
                 </Description>
                 <Contact>
                     <Title>Contacto</Title>
-                    <Text><Mail/><p>soporte@facturando.com</p></Text>
+                    <Text><Mail/><p>elara@solucionesamerica.com</p></Text>
                     <Text><Phone/><p>999-927-5000, 999-927-5002</p></Text>
                     <Text><Location/><p>C.20 No.277 x23 y 23-A Col. Miguel Alemán, Mérida Yucatán, 97148.</p></Text>
                 </Contact>

@@ -27,8 +27,8 @@ export default function ContactForm({ subject }) {
                 <Subtitle>Más Información</Subtitle>
                 <TextInfo><Location /><p>C.20 No.277 x23 y 23-A Col. Miguel Alemán, Mérida Yucatán, 97148.</p></TextInfo>
                 <TextInfo><Phone /><p>999-927-5000, 999-927-5002</p></TextInfo>
-                <TextInfo><Mail /><p>soporte@facturandote.com</p></TextInfo>
-                <TextInfo><Global /><p>facturandote.com</p></TextInfo>
+                <TextInfo><Mail /><p>elara@solucionesamerica.com</p></TextInfo>
+                <TextInfo><Global /><p>www.solucionesamerica.com</p></TextInfo>
                 <Logo src={AmericaSolutions}/>
             </InfoForm>
         </FormContainer>
