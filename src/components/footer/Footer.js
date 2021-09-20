@@ -19,8 +19,8 @@ export default function Footer(){
                     <Image src={LogoBlanco}/>
                     <Text>Nacimos para solucionarte la vida.</Text>
                     <SocialMedia>
-                        <Facebook onClick={facebook}></Facebook>
-                        <Instagram onClick={instagram}></Instagram>
+                        <Facebook onClick={facebook} title="Facebook"></Facebook>
+                        <Instagram onClick={instagram} title="Instagram"></Instagram>
                         {/* <div 
                             style={{color: '#fff', 
                                 margin: '5px 20px',

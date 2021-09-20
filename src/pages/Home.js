@@ -1,13 +1,16 @@
 import React from 'react';
+
+import Banner from '../components/banner/Banner';
 import Enterprises from '../components/enterprises/Enterprises';
 
-import Slider from '../components/slider/Slider';
+// import Slider from '../components/slider/Slider';
 
 const Home = () => {
     return (
         <>
-          <Slider/>
-          <Enterprises/>
+          {/* <Slider/> */}
+          <Banner />
+          <Enterprises />
         </>
     );
 }

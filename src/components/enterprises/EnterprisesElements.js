@@ -1,10 +1,18 @@
 import styled from "styled-components";
 
+export const Title = styled.h2`
+    margin: 20px 60px 0;
+    color: ${props => props.isDark ? '#fff' : '#151b4e'};
+    @media screen and (max-width: 768px){
+        margin: 30px 30px 20px;
+    }
+`;
+
 export const MainContainer = styled.div`
     display: flex;
     width: 100%;
-    height: 200px;
-    background: #fff;
+    height: 160px;
+    margin-bottom: 20px;
     align-items: center;
     justify-content: space-evenly;
 
@@ -22,6 +30,12 @@ export const EnterpriseContainer = styled.div`
     height: 80px;
     background: ${props => props.background || '#ffef00'};
     border-radius: 15px;
+    cursor: pointer;
+
+    &:hover{
+        transform: scale(1.1, 1.1);
+    }
+
     @media screen and (max-width: 768px){
         margin: 10px 0;
         &:first-child{
@@ -35,4 +49,16 @@ export const EnterpriseContainer = styled.div`
 
 export const EnterpriseLogo = styled.img`
     width: 150px;
+`;
+
+export const ModalContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+export const Text = styled.div`
+    width: 300px;
+    padding: 10px;
+    color: #333;
+    text-align: center;
 `;

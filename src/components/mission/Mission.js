@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
 import { Container, Info, Text, Title } from './MissionElements';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const Mission = () => {
+
+    const { isDark } = useContext(ThemeContext)
+
     return (
         <Container>
-            <Title>¿Quienes somos?</Title>
-            <Info>
+            <Title isDark={isDark}>¿Quienes somos?</Title>
+            <Info isDark={isDark}>
                 <Text>Todo comenzó el 8 de Agosto de 1992 cuando Jerry Barceló Cazola y Jose 
                     Enrique Mendicuti Moguel unieron fuerzas en una empresa de computación llamada 
                     PC HELP y una empresa que empezaba en telefonía celular como Distribuidor 

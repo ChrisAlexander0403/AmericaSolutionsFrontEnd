@@ -59,6 +59,7 @@ export const ContactForm = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-left: 20px;
+    color: ${props => props.isDark ? '#fff' : '#000'};
     @media screen and (max-width: 768px){
         grid-column: 1/-1;
         width: 100%;
@@ -104,7 +105,7 @@ export const SubtitleLightning = styled.h3`
 `;
 export const Subtitle = styled.h2`
     margin: 5px 0 20px;
-    color: #151b4e;
+    color: ${props => props.isDark ? '#fff' : '#151b4e'};
 `;
 export const Text = styled.p`
     margin-top: 20px; 
@@ -135,7 +136,7 @@ export const TextArea = styled.textarea`
     border: none;
     background: none;
     border-bottom: 1px solid #151b4e;
-    color: #000;
+    color: ${props => props.isDark ? '#fff' : '#000'};
     outline: 0;
     resize: none;
 `;
@@ -167,7 +168,7 @@ export const Input = styled.input.attrs(props => ({
     border: none;
     background: none;
     border-bottom: 1px solid #151b4e;
-    color: #000;
+    color: ${props => props.isDark ? '#fff' : '#000'};
     outline: 0;
     -moz-appearance:textfield;
     &::placeholder{

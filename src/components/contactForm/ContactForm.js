@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 import {
     FormContainer, InfoForm, Subtitle, TextInfo,
@@ -6,11 +7,13 @@ import {
 } from './ContactFormElements';
 import Form from './Form';
 import FormSuccess from './FormSuccess'
-import axios from 'axios';
+
 import AmericaSolutions from '../../assets/img/logos/AmericaSolutions/LogoBlanco.png';
 
 export default function ContactForm({ subject }) {
-    const [isSubmitted, setIsSubmitted] = useState(false)
+
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
     async function submitForm(values) {
         await axios.post('http://localhost:8000/api/mails/contact', {
             name: values.name,
@@ -20,6 +23,7 @@ export default function ContactForm({ subject }) {
         })
         setIsSubmitted(true);
     }
+    
     return (
         <FormContainer>
             {!isSubmitted ? <Form submitForm={submitForm} subject={subject}/> : <FormSuccess />}

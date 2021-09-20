@@ -9,12 +9,13 @@ export const Container = styled.section`
 `;
 
 export const Title = styled.h1`
-    color: #151b4e;
+    color: ${props => props.isDark ? '#fff' : '#151b4e'};
 `;
 
 export const Info = styled.div`
     width: 60%;
     padding: 20px 10px;
+    color: ${props => props.isDark ? '#fff' : '#000'};
     @media screen and (max-width: 768px){
         width: 80%;
     }

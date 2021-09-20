@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
+
 import { allowEmailCharacters, allowLettersOnly, formatInput, limitPhone } from '../../validations';
 import {DivForm, ContactForm, Subtitle, Text, AreaText, 
     Label, Input, TextArea, SendInput, Error} from './ContactFormElements';
 import useForm from '../../hooks/useForm';
 import ValidateInfo from './ValidateInfo';
+import { ThemeContext } from '../../context/ThemeContext';
 
 export default function Form({ submitForm, subject }){
-    const [text, setText] = useState('');
+
     const [values, setValues] = useState({
         name: '',
         email: '',
@@ -14,25 +16,15 @@ export default function Form({ submitForm, subject }){
         Comment: ''
     });
 
+    const { isDark } = useContext(ThemeContext);
+
     const {handleChange, handleSubmit, errors} = useForm(values, setValues, submitForm,ValidateInfo);
-
-    useEffect(() => {
-        console.log(subject);
-        if(subject === 'Training'){
-            setText('Me gustaría recibir capacitación.');
-        }else if(subject === 'Free'){
-            setText('Quiero recibir mis folios gratis.')
-        }else{
-            setText('');
-        }
-    }, [subject]);
-
 
     return(
         <DivForm>
-            <Subtitle>Contáctanos</Subtitle>
+            <Subtitle isDark={isDark}>Contáctanos</Subtitle>
             <form onSubmit={handleSubmit}>
-                <ContactForm>
+                <ContactForm isDark={isDark}>
                     <Text>
                         <Label>Nombre</Label>
                         <Input 
@@ -43,6 +35,7 @@ export default function Form({ submitForm, subject }){
                         value={values.name.replace(/\s+/g, ' ')} 
                         onChange={handleChange}
                         onKeyPress={allowLettersOnly}
+                        isDark={isDark}
                         />
                         {errors.name && <Error>{errors.name}</Error>}
                     </Text>
@@ -56,6 +49,7 @@ export default function Form({ submitForm, subject }){
                         value={values.email}
                         onKeyPress={allowEmailCharacters} 
                         onChange={handleChange}
+                        isDark={isDark}
                         />
                         {errors.email && <Error>{errors.email}</Error>}   
                     </Text>
@@ -70,6 +64,7 @@ export default function Form({ submitForm, subject }){
                         values={values.phone} 
                         onChange={handleChange}
                         onKeyDown={formatInput}
+                        isDark={isDark}
                         />
                         {errors.phone && <Error>{errors.phone}</Error>}   
                     </Text>
@@ -81,7 +76,7 @@ export default function Form({ submitForm, subject }){
                         name={'Comment'}
                         values={values.Comment.replace(/\s+/g, ' ')}
                         onChange={handleChange}
-                        defaultValue={text}
+                        isDark={isDark}
                         />
                         {errors.Comment && <Error>{errors.Comment}</Error>}
                     </AreaText>

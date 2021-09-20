@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { NavLink as Link } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaSun, FaMoon } from 'react-icons/fa';
 import { CgClose } from 'react-icons/cg';
 
 
@@ -146,4 +146,14 @@ export const NavBtnLink = styled.button`
         margin-left: 0;
         text-align: center;
     }
+`;
+
+export const Sun = styled(FaSun)`
+    color: #fff;
+    font-size: 25px;
+`;
+
+export const Moon = styled(FaMoon)`
+    color: #fff;
+    font-size: 20px;
 `;

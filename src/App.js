@@ -3,12 +3,14 @@ import { createGlobalStyle } from 'styled-components';
 import { Helmet } from 'react-helmet';
 
 import ScrollToTop from './hooks/useScrollToTop';
+import { ThemeContext } from './context/ThemeContext';
 
 import NavBar from './components/navbar/NavBar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Footer from './components/footer/Footer';
+import { useState } from 'react';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -18,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   body {
-    background-color: #fff;
+    background: ${props => props.isDark ? '#181818' : '#fff'};
   }
 
   body::-webkit-scrollbar {
@@ -33,6 +35,9 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
+
+  const [isDark, setIsDark] = useState(false);
+
   return (
     <Router>
       <Helmet>
@@ -40,16 +45,18 @@ function App() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet"/> 
       </Helmet>
-      <GlobalStyle />
-      <NavBar />
-      <ScrollToTop>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" exact component={About} />
-          <Route path="/contact" exact component={Contact} />
-        </Switch>
-      </ScrollToTop>
-      <Footer       />
+      <ThemeContext.Provider value={{ isDark, setIsDark }}>
+        <GlobalStyle isDark={isDark}/>
+        <NavBar />
+        <ScrollToTop>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" exact component={About} />
+            <Route path="/contact" exact component={Contact} />
+          </Switch>
+        </ScrollToTop>
+        <Footer />
+      </ThemeContext.Provider>
     </Router>
   );
 }

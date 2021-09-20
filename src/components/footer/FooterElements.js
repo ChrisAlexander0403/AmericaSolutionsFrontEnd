@@ -131,6 +131,6 @@ export const Twitter = styled(TiSocialTwitterCircular)`
 `;
 export const Instagram = styled(TiSocialInstagramCircular)`
     color: #fff;
-    font-size: 40px;
+    font-size: 50px;
     cursor: pointer;
 `;
