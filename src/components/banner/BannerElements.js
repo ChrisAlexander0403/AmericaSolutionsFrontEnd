@@ -20,7 +20,7 @@ export const Image = styled.img`
 
 export const Logo = styled.img`
     position: absolute;
-    z-index: 10;
+    z-index: 2;
     right: 50px;
     top: -20px;
     width: 300px;
@@ -32,7 +32,7 @@ export const Logo = styled.img`
 
 export const Text = styled.div`
     position: absolute;
-    z-index: 10;
+    z-index: 2;
     bottom: 80px;
     left: 50px;
     color: #fff;

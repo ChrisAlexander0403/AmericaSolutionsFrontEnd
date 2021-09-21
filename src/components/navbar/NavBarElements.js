@@ -84,15 +84,15 @@ export const NavMenu = styled.ul`
     display: flex;
     align-items: center;
     margin-right: 24px;
-    z-index: 999;
     transition: left 0.5s ease;
     list-style: none;
-
+    
     @media screen and (max-width: 1080px){
+        position: fixed;
+        z-index: 99;
         flex-direction: column;
         width: 75%;
         height: calc(100vh - 60px);
-        position: fixed;
         top: 60px;
         left: -100%;
         overflow-y: scroll;
