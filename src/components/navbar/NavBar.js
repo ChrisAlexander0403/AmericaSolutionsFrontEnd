@@ -1,18 +1,28 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
-import { Nav, NavLinkLogo, NavLink, Bars, Close, NavMenu, Image, Sun, Moon } from './NavBarElements';
-import { ThemeContext } from '../../context/ThemeContext';
+import { Nav, NavLinkLogo, NavLink, Bars, Close, NavMenu, Image, Sun, Moon, ThemeDiv } from './NavBarElements';
+import { ThemeContext } from '../../contexts/ThemeContext';
+import useScroll from '../../hooks/useScroll';
 
 import LogoBlanco from '../../assets/img/logos/AmericaSolutions/LogoBlanco.png';
 
 export default function NavBar() {
 
     const [click, setClick] = useState(false);
-    const [toggle, setToggle] = useState(false);
+
+    const [disableScroll, enableScroll] = useScroll();
 
     const closeMobileMenu = () => setClick(false);
 
-    const { setIsDark } = useContext(ThemeContext);
+    const { isDark, dispatch } = useContext(ThemeContext);
+
+    useEffect(() => {
+        if(click){
+            disableScroll();
+        }else if(!click){
+            enableScroll();
+        }
+    }, [click, disableScroll, enableScroll]);
 
     return (
         <>
@@ -24,20 +34,24 @@ export default function NavBar() {
                     {click ? <Close /> : <Bars />}
                 </div>
                 <NavMenu className={click ? 'active' : null}>
-                    <NavLink to="/about" onClick={closeMobileMenu}>
-                        Nosotros
-                    </NavLink>
-                    <NavLink to="/contact" onClick={closeMobileMenu}>
-                        Contacto
-                    </NavLink>
-                    <div 
-                        onClick={() => setToggle(!toggle)}
-                        style={{ width: '30px', cursor: 'pointer', marginLeft: '30px' }}
-                    >
-                        {!toggle ? <Sun onClick={() => setIsDark(true)}/>
-                        : <Moon onClick={() => setIsDark(false)} />
-                        }
-                    </div>
+                    <li>
+                        <NavLink to="/about" onClick={closeMobileMenu}>
+                            Nosotros
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/contact" onClick={closeMobileMenu}>
+                            Contacto
+                        </NavLink>
+                    </li>
+                    <li>
+                        <ThemeDiv onClick={() => dispatch({ type: 'TOGGLE_THEME', payload: isDark })}>
+                            { 
+                                !isDark ? <Sun />
+                                : <Moon />
+                            }
+                        </ThemeDiv>
+                    </li>
                 </NavMenu>
             </Nav>
         </>

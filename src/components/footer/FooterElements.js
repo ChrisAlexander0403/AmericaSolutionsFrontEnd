@@ -76,25 +76,28 @@ export const Description = styled.div`
 `;
 
 export const FooterEnd = styled.div`
-    color: #fff;
+    color: ${props => props.isDark ? '#fff' : '#000'};
     display: flex;
     height: 10%;
     width: 100%;
     align-items: center;
     padding-left: 30px;
     user-select: none;
-    background: #000;
+    background: ${props => props.isDark ? '#000' : '#fff'};
     @media screen and (max-width: 768px){
         padding-left: 10px;
         font-size: 10px;
         display: none;
+    }
+    a{
+        color: ${props => props.isDark ? '#fff' : '#000'};
     }
 `;
 
 export const Link = styled(NavLink)`
     text-decoration: none;
     cursor: pointer;
-    color: #fff;
+    
     margin: auto 5px;
     font-size: 16px;
     @media screen and (max-width: 768px){

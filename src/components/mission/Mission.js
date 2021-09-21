@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 
 import { Container, Info, Text, Title } from './MissionElements';
-import { ThemeContext } from '../../context/ThemeContext';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 const Mission = () => {
 
-    const { isDark } = useContext(ThemeContext)
+    const { isDark } = useContext(ThemeContext);
 
     return (
         <Container>

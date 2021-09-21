@@ -1,8 +1,22 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { NavLink as Link } from 'react-router-dom';
 import { FaBars, FaSun, FaMoon } from 'react-icons/fa';
 import { CgClose } from 'react-icons/cg';
 
+const button = css`
+    display: none;
+    color: #fff;
+
+    @media screen and (max-width: 1080px){
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 55%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+`;
 
 export const Nav = styled.nav`
     background: #151b4e;
@@ -52,65 +66,54 @@ export const NavLink = styled(Link)`
         color: #fff;
     }
 
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 1080px){
         height: 5rem;
-        font-size: 1rem;
     }
 `;
 
 export const Bars = styled(FaBars)`
-    display: none;
-    color: #fff;
-
-    @media screen and (max-width: 1080px){
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate(-100%, 75%);
-        font-size: 1.8rem;
-        cursor: pointer;
-    }
+    ${button}
 `;
 export const Close = styled(CgClose)`
-    display: none;
-    color: #fff;
-
-    @media screen and (max-width: 768px){
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate(-100%, 75%);
-        font-size: 1.8rem;
-        cursor: pointer;
-    }
+    ${button}
 `;
 
-export const NavMenu = styled.div`
+export const NavMenu = styled.ul`
     background: #151b4e;
     position: relative;
     display: flex;
     align-items: center;
     margin-right: 24px;
-    z-index: 3;
+    z-index: 999;
     transition: left 0.5s ease;
+    list-style: none;
 
     @media screen and (max-width: 1080px){
         flex-direction: column;
         width: 75%;
-        height: 100vh;
+        height: calc(100vh - 60px);
         position: fixed;
         top: 60px;
         left: -100%;
+        overflow-y: scroll;
         &.active{
             left: 0;
         }
     }
 
     @media screen and (orientation: landscape) and (max-width: 1080px){
-        height: 80vh;
+        height: calc(85vh - 60px);
+        width: 45%;
         padding-bottom: 20px;
+    }
+`;
+
+export const ThemeDiv = styled.div`
+    width: 30px; 
+    cursor: pointer;
+    margin-left: 30px;
+    @media screen and (max-width: 1080px){
+        margin-left: 0;
     }
 `;
 

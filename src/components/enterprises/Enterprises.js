@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { EnterpriseContainer, EnterpriseLogo, MainContainer, ModalContainer, Text, Title } from './EnterprisesElements';
-import { ThemeContext } from '../../context/ThemeContext';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 import Intecel from '../../assets/img/logos/Intecel/Intecel.png';
 import HughesNet from '../../assets/img/logos/HughesNet/logo.svg';

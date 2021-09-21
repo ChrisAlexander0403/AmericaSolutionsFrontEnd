@@ -5,7 +5,7 @@ import {DivForm, ContactForm, Subtitle, Text, AreaText,
     Label, Input, TextArea, SendInput, Error} from './ContactFormElements';
 import useForm from '../../hooks/useForm';
 import ValidateInfo from './ValidateInfo';
-import { ThemeContext } from '../../context/ThemeContext';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 export default function Form({ submitForm, subject }){
 
