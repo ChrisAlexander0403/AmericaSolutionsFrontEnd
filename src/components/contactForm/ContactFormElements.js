@@ -1,24 +1,7 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { FiMail, FiPhone } from 'react-icons/fi';
 import { GoLocation } from 'react-icons/go';
 import { AiOutlineGlobal } from 'react-icons/ai';
-
-const lightning = keyframes`
-    0%,100%{
-        color: #ffef00;
-        filter: blur(1px);
-        text-shadow: 0 0 10px #ffef00,
-                    0 0 20px #ffef00,
-                    0 0 40px #ffef00,
-                    0 0 80px #ffef00,
-                    0 0 120px #ffef00
-    }
-    20%,80%{
-        color: #222;
-        filter: blur(0px);
-        text-shadow: none;
-    }
-`;
 
 export const Image = styled.img`
     width: 200px;
@@ -37,11 +20,12 @@ export const DivSuccess = styled.div`
 export const FormContainer = styled.div`
     display: grid;
     grid-template-columns: 5fr 3fr;
-    margin: 50px 0;
+    margin: 50px;
 
-    @media screen and (max-width: 768px){
-        width: 100%;
+    @media screen and (max-width: 1080px){
+        width: 99%;
         box-shadow: none;
+        margin: 50px 0;
         grid-template-columns: 100%;
     }
 `;
@@ -60,6 +44,15 @@ export const ContactForm = styled.div`
     grid-template-columns: 1fr 1fr;
     margin-left: 20px;
     color: ${props => props.isDark ? '#fff' : '#000'};
+
+    input, textarea{
+        border-bottom: ${props => props.isDark ? '1px solid #0082cc' : '1px solid #151b4e'};
+    }
+
+    button{
+        background: ${props => props.isDark ? '#0082cc' : '#151b4e'};
+    }
+
     @media screen and (max-width: 768px){
         grid-column: 1/-1;
         width: 100%;
@@ -70,10 +63,15 @@ export const InfoForm = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
-    background-color: #151b4e;
+    background-color: ${props => props.isDark ? '#0082cc': '#151b4e'};
     padding: 0 2em;
     min-height: 350px;
     color: #fff;
+
+    h2{
+        color: #fff;
+    }
+
     @media screen and (max-width: 768px){
         grid-column: 1/-1;
         padding: 2em 1em;
@@ -84,27 +82,11 @@ export const InfoForm = styled.div`
 export const Logo = styled.img`
     width: 250px;
     align-self: center;
-    transform: translateY(80px);
+    transform: translateY(60px);
 `;
 
-export const SubtitleLightning = styled.h3`
-    position: absolute;
-    left: 0;
-    bottom: 5%;
-    width: 100%;
-    text-align: center;
-    font-size: 2.5rem;
-    animation: ${lightning} 5s linear infinite;
-    user-select: none;
-    @media screen and (max-width: 768px){
-        margin-top: 30px;
-        animation: none;
-        color: #ffef00;
-        text-shadow: 0 0 40px #ffef00;
-    }
-`;
 export const Subtitle = styled.h2`
-    margin: 5px 0 20px;
+    margin: 20px 0;
     color: ${props => props.isDark ? '#fff' : '#151b4e'};
 `;
 export const Text = styled.p`
@@ -135,7 +117,6 @@ export const TextArea = styled.textarea`
     padding: .7em;
     border: none;
     background: none;
-    border-bottom: 1px solid #151b4e;
     color: ${props => props.isDark ? '#fff' : '#000'};
     outline: 0;
     resize: none;
@@ -167,7 +148,6 @@ export const Input = styled.input.attrs(props => ({
     padding: .7em;
     border: none;
     background: none;
-    border-bottom: 1px solid #151b4e;
     color: ${props => props.isDark ? '#fff' : '#000'};
     outline: 0;
     -moz-appearance:textfield;
@@ -202,12 +182,14 @@ export const SendInput = styled.button`
     text-transform: uppercase;
     padding: 1em;
     grid-column: span 2;
+    cursor: pointer;
+    transition: transform .5 ease-in-out;
+
     &:hover{
-        background: #0082cc;
-        color: #fff;
-        transition: background .3 ease-in-out;
+        transform: translateY(-3px);
     }
+
     &:active{
-        transform: translateY(5px);
+        transform: scale(0.95, 0.95);
     }
 `;

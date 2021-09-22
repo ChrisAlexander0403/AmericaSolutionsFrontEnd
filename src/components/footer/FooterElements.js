@@ -24,13 +24,19 @@ export const FooterInformation = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: 90%;
-    background-color: #151b4e;
+    background-color: ${props => props.isDark ? '#181818' : '#e7e7e7'};
+    box-shadow: 0 -5px 15px ${props => props.isDark ? 'rgba(0, 0, 0, .25)' : 'rgba(100, 100, 100, .25)'};
 `;
 
 export const Contact = styled.div`
     height: 100%;
     width: 100%;
+    margin: 20px 0;
     padding: 20px 20px 30px;
+
+    div, p{
+        color: ${props => props.isDark ? '#fff' : '#000'}
+    }
     
     @media screen and (max-width: 768px){
         grid-column: 1/-1;
@@ -39,28 +45,34 @@ export const Contact = styled.div`
 
 export const Title = styled.p`
     padding: 10px 20px 30px 20px;
-    color: #fff;
     font-size: 20px;
     @media screen and (max-width: 768px){
-        padding: 10px 10px 15px 0;
+        text-align: center;
     }
 `;
 
 export const Text = styled.div`
     display: flex;
     padding: 20px 40px 0 20px;
-    color: #fff;
+    color: ${props => props.isDark ? '#fff' : '#000'};
     font-size: 16px;
     @media screen and (max-width: 768px){
         padding: 10px 0 0 10px;
     }
 `;
 
+export const ImageContainer = styled.div`
+    margin: 0 10px;
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    object-fit: cover;
+    transform: translateY(-20px);
+`;
+
 export const Image = styled.img`
-    width: 150px;
-    @media screen and (max-width: 768px){
-        width: 170px;
-    }
+    width: 200px;
+    object-fit: cover;
 `;
 
 export const Description = styled.div`
@@ -69,6 +81,7 @@ export const Description = styled.div`
     height: 100%;
     width: 100%;
     padding: 20px 20px 10px;
+
     @media screen and (max-width: 768px){
         grid-column: 1/-1;
         align-items: center;
@@ -123,17 +136,17 @@ export const Location = styled(GoLocation)`
 `;
 
 export const Facebook = styled(TiSocialFacebookCircular)`
-    color: #fff;
+    color: ${props => props.isDark ? '#fff' : '#3b5998'};
     font-size: 50px;
     cursor: pointer;
 `;
 export const Twitter = styled(TiSocialTwitterCircular)`
-    color: #fff;
+    color: ${props => props.isDark ? '#fff' : '#00acee'};
     font-size: 50px;
     cursor: pointer;
 `;
 export const Instagram = styled(TiSocialInstagramCircular)`
-    color: #fff;
+    color: ${props => props.isDark ? '#fff' : '#e1306c'};
     font-size: 50px;
     cursor: pointer;
 `;

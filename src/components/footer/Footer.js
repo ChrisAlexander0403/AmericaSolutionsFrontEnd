@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 
-import {Facebook, Link, SocialMedia, Instagram} from './FooterElements';
+import {Facebook, Link, SocialMedia, Instagram, ImageContainer} from './FooterElements';
 import { Contact, Container, FooterInformation, Description, FooterEnd, Text, Title, Image, Mail, Phone, Location } from './FooterElements';
 import { ThemeContext } from '../../contexts/ThemeContext';
 
 import LogoBlanco from '../../assets/img/logos/AmericaSolutions/LogoBlanco.png';
+import MedioLogo from '../../assets/img/logos/AmericaSolutions/MedioLogo.png';
 
 export default function Footer(){
 
@@ -20,33 +21,18 @@ export default function Footer(){
 
     return(
         <Container>
-            <FooterInformation>
+            <FooterInformation isDark={isDark}>
                 <Description>
-                    <Image src={LogoBlanco}/>
-                    <Text>Nacimos para solucionarte la vida.</Text>
+                    <ImageContainer>
+                        <Image src={isDark ? LogoBlanco : MedioLogo} />
+                    </ImageContainer>
+                    <Text isDark={isDark}>Nacimos para solucionarte la vida.</Text>
                     <SocialMedia>
-                        <Facebook onClick={facebook} title="Facebook"></Facebook>
-                        <Instagram onClick={instagram} title="Instagram"></Instagram>
-                        {/* <div 
-                            style={{color: '#fff', 
-                                margin: '5px 20px',
-                                fontSize: '10px'}}
-                        >
-                            Icons made by 
-                            <a 
-                                style={{textDecoration:'none', color: '#ffef00'}} 
-                                href="https://www.freepik.com" 
-                                title="Freepik"
-                            > Freepik </a> from 
-                            <a 
-                                style={{textDecoration:'none', color: '#ffef00'}} 
-                                href="https://www.flaticon.com/" 
-                                title="Flaticon"
-                            > www.flaticon.com </a>
-                        </div> */}
+                        <Facebook onClick={facebook} title="Facebook" isDark={isDark} />
+                        <Instagram onClick={instagram} title="Instagram" isDark={isDark} />
                     </SocialMedia>
                 </Description>
-                <Contact>
+                <Contact isDark={isDark}>
                     <Title>Contacto</Title>
                     <Text><Mail/><p>elara@solucionesamerica.com</p></Text>
                     <Text><Phone/><p>999-927-5000, 999-927-5002</p></Text>

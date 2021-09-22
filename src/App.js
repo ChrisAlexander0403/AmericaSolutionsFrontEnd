@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   body {
-    background: ${props => props.isDark ? '#181818' : '#fff'};
+    background: ${props => props.isDark ? '#181818' : '#e7e7e7'};
   }
 
   body::-webkit-scrollbar {

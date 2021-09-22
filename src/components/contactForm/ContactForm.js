@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 
 import {
@@ -7,10 +7,13 @@ import {
 } from './ContactFormElements';
 import Form from './Form';
 import FormSuccess from './FormSuccess'
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 import AmericaSolutions from '../../assets/img/logos/AmericaSolutions/LogoBlanco.png';
 
 export default function ContactForm({ subject }) {
+
+    const { isDark } = useContext(ThemeContext);
 
     const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -27,7 +30,7 @@ export default function ContactForm({ subject }) {
     return (
         <FormContainer>
             {!isSubmitted ? <Form submitForm={submitForm} subject={subject}/> : <FormSuccess />}
-            <InfoForm>
+            <InfoForm isDark={isDark}>
                 <Subtitle>Más Información</Subtitle>
                 <TextInfo><Location /><p>C.20 No.277 x23 y 23-A Col. Miguel Alemán, Mérida Yucatán, 97148.</p></TextInfo>
                 <TextInfo><Phone /><p>999-927-5000, 999-927-5002</p></TextInfo>

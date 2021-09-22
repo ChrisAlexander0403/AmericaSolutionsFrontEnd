@@ -18,20 +18,7 @@ const button = css`
     }
 `;
 
-export const Nav = styled.nav`
-    background: #151b4e;
-    height: 60px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    z-index: 3;
-    position: relative;
-    @media screen and (orientation: landscape) and (max-width: 1080px){
-        position: relative;
-    }
-`;
-
-export const NavLinkLogo = styled(Link)`
+const link = css`
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -39,8 +26,26 @@ export const NavLinkLogo = styled(Link)`
     height: 65%;
     cursor: pointer;
     border-radius: 4px;
-    margin: 1rem 0 0 5rem;
     user-select: none;
+`;
+
+export const Nav = styled.nav`
+    background: ${props => props.isDark ? '#181818' : '#e7e7e7'};
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+    position: relative;
+    box-shadow: 0 5px 15px ${props => props.isDark ? 'rgba(0, 0, 0, .25)' : 'rgba(100, 100, 100, .25)'};
+    @media screen and (orientation: landscape) and (max-width: 1080px){
+        position: relative;
+    }
+`;
+
+export const NavLinkLogo = styled(Link)`
+    ${link}
+    margin: 1rem 0 0 5rem;
     @media screen and (max-width: 768px){
         height: 30%;
         margin: auto 0;
@@ -52,18 +57,10 @@ export const Image = styled.img`
 `;
 
 export const NavLink = styled(Link)`
-    color: #fff;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding: 0 1rem;
-    height: 65%;
-    cursor: pointer;
-    border-radius: 4px;
+    ${link}
     font-size: 16px;
-    user-select: none;
     &.active{
-        color: #fff;
+        color: #0082cc;
     }
 
     @media screen and (max-width: 1080px){
@@ -79,23 +76,29 @@ export const Close = styled(CgClose)`
 `;
 
 export const NavMenu = styled.ul`
-    background: #151b4e;
+    background: ${props => props.isDark ? '#181818' : '#e7e7e7'};
     position: relative;
     display: flex;
     align-items: center;
     margin-right: 24px;
     transition: left 0.5s ease;
     list-style: none;
+
+    a{
+        color: ${props => props.isDark ? '#fff' : '#151b4e'};
+    }
     
     @media screen and (max-width: 1080px){
         position: fixed;
-        z-index: 99;
+        z-index: 99 ;
         flex-direction: column;
         width: 75%;
         height: calc(100vh - 60px);
         top: 60px;
         left: -100%;
         overflow-y: scroll;
+        box-shadow: 5px 15px 15px ${props => props.isDark ? 'rgba(0, 0, 0, .25)' : 'rgba(100, 100, 100, .25)'};
+        
         &.active{
             left: 0;
         }
@@ -111,9 +114,9 @@ export const NavMenu = styled.ul`
 export const ThemeDiv = styled.div`
     width: 30px; 
     cursor: pointer;
-    margin-left: 30px;
+    margin: 30px;
     @media screen and (max-width: 1080px){
-        margin-left: 0;
+        margin: 1rem 0 5rem 0;
     }
 `;
 
@@ -152,7 +155,7 @@ export const NavBtnLink = styled.button`
 `;
 
 export const Sun = styled(FaSun)`
-    color: #fff;
+    color: #FAF547;
     font-size: 25px;
 `;
 
