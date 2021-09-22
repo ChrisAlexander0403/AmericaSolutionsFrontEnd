@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 import { NavLink as Link } from 'react-router-dom';
-import { FaBars, FaSun, FaMoon } from 'react-icons/fa';
+import { FaSun, FaMoon } from 'react-icons/fa';
 import { CgClose } from 'react-icons/cg';
+import { BsThreeDotsVertical } from 'react-icons/bs';
 
 const button = css`
     display: none;
@@ -72,7 +73,7 @@ export const DivButtons = styled.div`
     color: ${props => props.isDark ? '#fff' : '#151b4e'};
 `;
 
-export const Bars = styled(FaBars)`
+export const Bars = styled(BsThreeDotsVertical)`
     ${button}
 `;
 export const Close = styled(CgClose)`

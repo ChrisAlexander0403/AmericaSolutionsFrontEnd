@@ -40,7 +40,7 @@ export default function Footer(){
                 </Contact>
             </FooterInformation>
             <FooterEnd isDark={isDark}>
-                <Link to="/Inicio">Inicio</Link> | <Link to="/About">¿Quienes Somos?</Link> | <Link to="/Contact">Contacto</Link>
+                <Link to="/">Inicio</Link> | <Link to="/about">¿Quienes Somos?</Link> | <Link to="/contact">Contacto</Link>
             </FooterEnd>
         </Container>
     );

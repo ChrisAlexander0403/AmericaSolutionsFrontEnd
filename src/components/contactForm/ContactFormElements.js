@@ -10,7 +10,7 @@ export const FormContainer = styled.div`
     width: 750px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 10px 10px 10px ${props => props.isDark ? 'rgba(0, 0, 0, .5)' : 'rgba(100, 100, 100, .75)'};
+    box-shadow: 10px 10px 10px ${props => props.isDark ? 'rgba(0, 0, 0, .5)' : 'rgba(100, 100, 100, .5)'};
 
     @media screen and (max-width: 480px){
         width: 90%;
@@ -21,7 +21,7 @@ export const FormContainer = styled.div`
 export const DivForm = styled.div`
     position: relative;
     padding: 1.5rem;
-    background: ${props => props.isDark ? 'rgba(0, 0, 0, .75)' : 'rgba(255, 255, 255, .35)'};
+    background: ${props => props.isDark ? 'rgba(0, 0, 0, .75)' : 'rgba(255, 255, 255, .65)'};
     min-height: 550px;
 
     @media screen and (max-width: 768px){

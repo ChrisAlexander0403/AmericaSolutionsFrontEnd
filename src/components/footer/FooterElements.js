@@ -45,7 +45,7 @@ export const Contact = styled.div`
 
 export const Title = styled.p`
     padding: 10px 20px 30px 20px;
-    font-size: 20px;
+    font-size: 24px;
     @media screen and (max-width: 768px){
         text-align: center;
     }
