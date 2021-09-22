@@ -22,7 +22,7 @@ export const FormContainer = styled.div`
     grid-template-columns: 5fr 3fr;
     margin: 50px;
 
-    @media screen and (max-width: 1080px){
+    @media screen and (max-width: 768px){
         width: 99%;
         box-shadow: none;
         margin: 50px 0;

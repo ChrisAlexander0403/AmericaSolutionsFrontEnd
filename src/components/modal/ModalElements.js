@@ -29,7 +29,7 @@ export const ModalContainer = styled.div`
     border-radius: 25px;
     @media screen and (max-width: 480px){
         width: 320px;
-        min-height: 480px;
+        min-height: 320px;
         max-height: 600px;
     }
 `;

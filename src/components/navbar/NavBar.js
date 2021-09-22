@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 
-import { Nav, NavLinkLogo, NavLink, Bars, Close, NavMenu, Image, Sun, Moon, ThemeDiv } from './NavBarElements';
+import { Nav, NavLinkLogo, NavLink, Bars, Close, NavMenu, Image, Sun, Moon, ThemeDiv, DivButtons } from './NavBarElements';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import useScroll from '../../hooks/useScroll';
 
@@ -31,9 +31,9 @@ export default function NavBar() {
                 <NavLinkLogo to="/" onClick={closeMobileMenu}>
                     <Image src={isDark ? LogoBlanco : MedioLogo} />
                 </NavLinkLogo>
-                <div onClick={() => setClick(!click)}>
+                <DivButtons isDark={isDark} onClick={() => setClick(!click)}>
                     {click ? <Close /> : <Bars />}
-                </div>
+                </DivButtons>
                 <NavMenu 
                     className={click ? 'active' : null}
                     isDark={isDark}
@@ -49,7 +49,13 @@ export default function NavBar() {
                         </NavLink>
                     </li>
                     <li>
-                        <ThemeDiv onClick={() => dispatch({ type: 'TOGGLE_THEME', payload: isDark })}>
+                        <ThemeDiv 
+                            onClick={
+                                () => dispatch({ 
+                                    type: 'TOGGLE_THEME', payload: isDark 
+                                })
+                            }
+                        >
                             { 
                                 !isDark ? <Sun />
                                 : <Moon />

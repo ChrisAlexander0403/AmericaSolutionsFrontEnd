@@ -5,7 +5,6 @@ import { CgClose } from 'react-icons/cg';
 
 const button = css`
     display: none;
-    color: #fff;
 
     @media screen and (max-width: 1080px){
         display: block;
@@ -49,6 +48,7 @@ export const NavLinkLogo = styled(Link)`
     @media screen and (max-width: 768px){
         height: 30%;
         margin: auto 0;
+        transform: translateY(5px);
     }
 `;
 
@@ -66,6 +66,10 @@ export const NavLink = styled(Link)`
     @media screen and (max-width: 1080px){
         height: 5rem;
     }
+`;
+
+export const DivButtons = styled.div`
+    color: ${props => props.isDark ? '#fff' : '#151b4e'};
 `;
 
 export const Bars = styled(FaBars)`

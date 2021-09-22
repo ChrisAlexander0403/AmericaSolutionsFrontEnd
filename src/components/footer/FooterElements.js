@@ -96,7 +96,7 @@ export const FooterEnd = styled.div`
     align-items: center;
     padding-left: 30px;
     user-select: none;
-    background: ${props => props.isDark ? '#000' : '#fff'};
+    background: ${props => props.isDark ? '#111' : '#d4d4d4'};
     @media screen and (max-width: 768px){
         padding-left: 10px;
         font-size: 10px;

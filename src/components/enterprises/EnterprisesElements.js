@@ -16,6 +16,10 @@ export const MainContainer = styled.div`
     align-items: center;
     justify-content: space-evenly;
 
+    div{
+        box-shadow: 5px 5px 5px ${props => props.isDark ? 'rgba(0, 0, 0, .5)' : 'rgba(100, 100, 100, .5)'};
+    }
+
     @media screen and (max-width: 768px){
         flex-direction: column;
         height: auto;
@@ -54,6 +58,7 @@ export const EnterpriseLogo = styled.img`
 export const ModalContainer = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
 `;
 
 export const Text = styled.div`
@@ -61,4 +66,9 @@ export const Text = styled.div`
     padding: 10px;
     color: #333;
     text-align: center;
+`;
+
+export const ConstructionImage = styled.img`
+    width: 300px;
+    border-radius: 25px;
 `;

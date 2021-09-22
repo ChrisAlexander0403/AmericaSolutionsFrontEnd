@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
 
-import { EnterpriseContainer, EnterpriseLogo, MainContainer, ModalContainer, Text, Title } from './EnterprisesElements';
+import { ConstructionImage, EnterpriseContainer, EnterpriseLogo, MainContainer, ModalContainer, Text, Title } from './EnterprisesElements';
 import { ThemeContext } from '../../contexts/ThemeContext';
 
 import Intecel from '../../assets/img/logos/Intecel/Intecel.png';
 import HughesNet from '../../assets/img/logos/HughesNet/logo.svg';
 import Facturandote from '../../assets/img/logos/Facturandote/FacturandoteLogo.png';
 import MSP from '../../assets/img/logos/MSP/LogoMSP.png';
+import Construction from '../../assets/img/construction.gif';
+
 import IntecelModal from '../modal/Modal';
 import useModal from '../../hooks/useModal';
 
@@ -31,7 +33,7 @@ const Enterprises = () => {
     return (
         <div>
             <Title isDark={isDark}>Nuestras empresas</Title>    
-            <MainContainer>
+            <MainContainer isDark={isDark}>
                 <EnterpriseContainer onClick={openModal}>
                     <EnterpriseLogo src={Intecel}/>
                 </EnterpriseContainer>
@@ -49,6 +51,7 @@ const Enterprises = () => {
                 <ModalContainer>
                     <EnterpriseLogo src={Intecel}/>
                     <Text>Este sitio web está actualmente en construcción.</Text>
+                    <ConstructionImage src={Construction} alt=''/>
                 </ModalContainer>
             </IntecelModal>
         </div>
