@@ -28,7 +28,7 @@ export default function ContactForm({ subject }) {
     }
     
     return (
-        <FormContainer>
+        <FormContainer isDark={isDark}>
             {!isSubmitted ? <Form submitForm={submitForm} subject={subject}/> : <FormSuccess />}
             <InfoForm isDark={isDark}>
                 <Subtitle>Más Información</Subtitle>
