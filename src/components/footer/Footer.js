@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import {Facebook, Link, SocialMedia, Instagram, ImageContainer} from './FooterElements';
+import {Facebook, Link, SocialMedia, Instagram, ImageContainer, ContactInfo} from './FooterElements';
 import { Contact, Container, FooterInformation, Description, FooterEnd, Text, Title, Image, Mail, Phone, Location } from './FooterElements';
 import { ThemeContext } from '../../contexts/ThemeContext';
 
@@ -26,7 +26,12 @@ export default function Footer(){
                     <ImageContainer>
                         <Image src={isDark ? LogoBlanco : MedioLogo} />
                     </ImageContainer>
-                    <Text isDark={isDark}>Nacimos para solucionarte la vida.</Text>
+                    <Text 
+                        isDark={isDark}
+                        style={{ width: '100%' }}
+                    >
+                        Nacimos para solucionarte la vida.
+                    </Text>
                     <SocialMedia>
                         <Facebook onClick={facebook} title="Facebook" isDark={isDark} />
                         <Instagram onClick={instagram} title="Instagram" isDark={isDark} />
@@ -34,9 +39,11 @@ export default function Footer(){
                 </Description>
                 <Contact isDark={isDark}>
                     <Title>Contacto</Title>
-                    <Text><Mail/><p>elara@solucionesamerica.com</p></Text>
-                    <Text><Phone/><p>999-927-5000, 999-927-5002</p></Text>
-                    <Text><Location/><p>C.20 No.277 x23 y 23-A Col. Miguel Alemán, Mérida Yucatán, 97148.</p></Text>
+                    <ContactInfo>
+                        <Text><Mail/><p>elara@solucionesamerica.com</p></Text>
+                        <Text><Phone/><p>999-927-5000, 999-927-5002</p></Text>
+                        <Text><Location/><p>C.20 No.277 x23 y 23-A Col. Miguel Alemán, Mérida Yucatán, 97148.</p></Text>
+                    </ContactInfo>
                 </Contact>
             </FooterInformation>
             <FooterEnd isDark={isDark}>

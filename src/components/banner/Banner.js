@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { Container, Image, Logo, Text } from './BannerElements';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
-import BannerImage from '../../assets/img/slider/Consulting.jpg';
-import AmericaSolutions from '../../assets/img/logos/AmericaSolutions/LogoBlanco.png';
+import BannerImage from '../../assets/img/slider/Compromised.jpg';
+import AmericaSolutions from '../../assets/img/logos/AmericaSolutions/AmericaSolutions.png';
+import AmericaSolutionsGray from '../../assets/img/logos/AmericaSolutions/AmericaSolutionsGray.png';
 
 const Banner = () => {
 
     const [offsetY, setOffsetY] = useState(0);
 
     const handleScroll = () => setOffsetY(window.scrollY);
+
+    const { isDark } = useContext(ThemeContext);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -20,8 +24,8 @@ const Banner = () => {
 
     return (
         <Container>
-            <Logo src={AmericaSolutions} />
-            <Text>Buscando la manera de solucionar tu vida</Text>
+            <Logo src={isDark ? AmericaSolutionsGray : AmericaSolutions} />
+            <Text>Comprometidos en crear soluciones para tu día a día.</Text>
             <Image 
                 src={BannerImage}
                 style={{ transform: `translateY(-${offsetY * 0.25}px)` }}

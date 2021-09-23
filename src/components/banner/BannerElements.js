@@ -5,7 +5,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 90vh;
+    height: 70vh;
     overflow: hidden;
     
     @media screen and (max-width: 768px){
@@ -14,8 +14,9 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-    width: 80%;
+    width: 100%;
     object-fit: cover;
+    object-position: 0 70%;
 
     @media screen and (max-width: 768px){
         width: 100%;
@@ -25,18 +26,20 @@ export const Image = styled.img`
 export const Logo = styled.img`
     position: absolute;
     z-index: 2;
-    right: 150px;
-    top: -50px;
-    width: 300px;
-
-    @media screen and (max-width: 1080px){
-        right: 100px;
-    }
+    right: calc(50vw - 250px);
+    top: -40px;
+    width: 500px;
 
     @media screen and (max-width: 768px){
-        width: 150px;
-        right: 10px;
+        top: -30px;
+        width: 400px;
+        right: calc(50vw - 200px);
+    }
+
+    @media screen and (max-width: 480px){
+        width: 300px;
         top: -20px;
+        right: calc(50vw - 150px)
     }
 `;
 
@@ -58,11 +61,12 @@ export const Text = styled.div`
     @media screen and (max-width: 768px){
         bottom: 50px;
         left: 25px;
-        width: 300px;
+        width: 400px;
     }
 
     @media screen and (max-width: 480px){
-        width: 200px;
+        bottom: 10px;
+        width: 300px;
         font-size: 16px;
     }
 `;
