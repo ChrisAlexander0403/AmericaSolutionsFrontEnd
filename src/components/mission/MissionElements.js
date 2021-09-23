@@ -9,7 +9,7 @@ export const Container = styled.section`
 `;
 
 export const Title = styled.h1`
-    color: ${props => props.isDark ? '#fff' : '#151b4e'};
+    color: ${props => props.isDark ? '#0082cc' : '#151b4e'};
 `;
 
 export const Info = styled.div`

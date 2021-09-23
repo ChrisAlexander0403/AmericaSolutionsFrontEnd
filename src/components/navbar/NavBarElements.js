@@ -117,11 +117,58 @@ export const NavMenu = styled.ul`
 `;
 
 export const ThemeDiv = styled.div`
-    width: 30px; 
-    cursor: pointer;
-    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75px; 
+    margin: 10px;
+    user-select: none;
+    
     @media screen and (max-width: 1080px){
         margin: 1rem 0 5rem 0;
+    }
+
+    @media screen and (max-width: 480px){
+        width: 90px;
+    }
+`;
+
+export const Switch = styled.input`
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background: #c6c6c6;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+    transition: .5s;
+    cursor: pointer;
+    user-select: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &:checked{
+        background: #0082cc;
+    }
+
+    &:before{
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+        transform: scale(1.1);
+        transition: .5s;
+        user-select: none;
+    }
+
+    &:checked:before{
+        left: 20px;
+        user-select: none;
     }
 `;
 
@@ -160,11 +207,17 @@ export const NavBtnLink = styled.button`
 `;
 
 export const Sun = styled(FaSun)`
-    color: #FAF547;
+    color: #ffef00;
     font-size: 25px;
+    @media screen and (max-width: 480px){
+        font-size: 35px;
+    }
 `;
 
 export const Moon = styled(FaMoon)`
     color: #fff;
     font-size: 20px;
+    @media screen and (max-width: 480px){
+        font-size: 30px;
+    }
 `;
