@@ -77,6 +77,7 @@ export default function Form({ submitForm, subject }){
                             values={values.Comment.replace(/\s+/g, ' ')}
                             onChange={handleChange}
                             isDark={isDark}
+                            rows='3'
                         />
                         {errors.Comment && <Error>{errors.Comment}</Error>}
                     </Text>

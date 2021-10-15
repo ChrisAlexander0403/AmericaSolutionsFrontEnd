@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scrollbar-color: #0082cc;
   }
   body {
     background: ${props => props.isDark ? '#181818' : '#e7e7e7'};
@@ -25,11 +26,11 @@ const GlobalStyle = createGlobalStyle`
 
   body::-webkit-scrollbar {
     width: 10px;
-    background: #3d3d3d;
+    background: ${props => props.isDark ? '#3d3d3d' : '#c2c2c2'};
   }
 
   body::-webkit-scrollbar-thumb {
-    background: #ffef00;
+    background: ${props => props.isDark ? '#0082cc' : '#151b4e'};
     border-radius: 4px;
   }
 `;
