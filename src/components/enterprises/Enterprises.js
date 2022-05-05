@@ -18,9 +18,9 @@ const Enterprises = () => {
 
     const { isDark } = useContext(ThemeContext);
 
-    const HughesNetLink = () => {
-        window.open('https://www.hughesnet.com.mx/', '_blank');
-    }
+    // const HughesNetLink = () => {
+    //     window.open('https://www.hughesnet.com.mx/', '_blank');
+    // }
 
     const FacturandoteLink = () => {
         window.open('http://facturandote.com/', '_blank');
@@ -37,9 +37,9 @@ const Enterprises = () => {
                 <EnterpriseContainer onClick={openModal}>
                     <EnterpriseLogo src={Intecel}/>
                 </EnterpriseContainer>
-                <EnterpriseContainer background={'#f05a28'} onClick={HughesNetLink}>
+                {/* <EnterpriseContainer background={'#f05a28'} onClick={HughesNetLink}>
                     <EnterpriseLogo src={HughesNet}/>
-                </EnterpriseContainer>
+                </EnterpriseContainer> */}
                 <EnterpriseContainer background={'#222'} onClick={FacturandoteLink}>
                     <EnterpriseLogo src={Facturandote}/>
                 </EnterpriseContainer>
